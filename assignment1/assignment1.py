@@ -4,3 +4,10 @@ def hello():
     return "Hello"
 
 
+# Task 2: Greet with a Formatted String
+
+def greet(name):
+    return (f"Hello, {name}")
+
+
+
