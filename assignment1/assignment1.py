@@ -63,3 +63,32 @@ def data_type_conversion(value, type):
 
 # print(data_type_conversion("12.5", "float"))
 # print(data_type_conversion(123, "str"))
+
+
+# Task 5
+def grade(*args):
+    try:
+        total = 0
+        count = 0
+
+        for score in args:
+            total = total + score
+            count = count + 1
+
+        average = total / count
+
+        if average >= 90:
+            return "A"
+        elif average >= 80:
+            return "B"
+        elif average >= 70:
+            return "C"
+        elif average >= 60:
+            return "D"
+        else:
+            return "F"
+
+    except TypeError:
+        return "Invalid data was provided."
+
+# print(grade(75, 85, 95))
