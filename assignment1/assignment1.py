@@ -135,3 +135,16 @@ def titleize(string):
             words[i] = word.capitalize()
 
     return " ".join(words)
+
+
+# Task 9
+def hangman(secret, guess):
+    result = ""
+
+    for letter in secret:
+        if letter in guess:
+            result = result + letter
+        else:
+            result = result + "_"
+
+    return result
