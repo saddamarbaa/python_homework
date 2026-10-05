@@ -92,3 +92,46 @@ def grade(*args):
         return "Invalid data was provided."
 
 # print(grade(75, 85, 95))
+
+
+# Task 7
+def student_scores(operation, **kwargs):
+    if operation == "best":
+        best_student = ""
+        best_score = -1
+
+        for name, score in kwargs.items():
+            if score > best_score:
+                best_score = score
+                best_student = name
+
+        return best_student
+
+    elif operation == "mean":
+        return sum(kwargs.values()) / len(kwargs)
+
+
+# Task 8
+def titleize(string):
+    words = string.split()
+
+    little_words = ["a", "on", "an", "the", "of", "and", "is", "in"]
+
+    for i, word in enumerate(words):
+        # First word
+        if i == 0:
+            words[i] = word.capitalize()
+
+        # Last word
+        elif word == words[-1]:
+            words[i] = word.capitalize()
+
+        # Little word
+        elif word in little_words:
+            words[i] = word
+
+        # Everything else
+        else:
+            words[i] = word.capitalize()
+
+    return " ".join(words)
