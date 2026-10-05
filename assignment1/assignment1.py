@@ -1,13 +1,13 @@
 # Task 1: Hello
 
 def hello():
-    return "Hello"
+    return "Hello!"
 
 
 # Task 2: Greet with a Formatted String
 
 def greet(name):
-    return (f"Hello, {name}")
+    return f"Hello, {name}!"
 
 
 # Task 3: Calculator
@@ -92,6 +92,16 @@ def grade(*args):
         return "Invalid data was provided."
 
 # print(grade(75, 85, 95))
+
+
+# Task 6
+def repeat(string, count):
+    result = ""
+
+    for i in range(count):
+        result = result + string
+
+    return result
 
 
 # Task 7
