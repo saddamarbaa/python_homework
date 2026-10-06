@@ -161,6 +161,7 @@ def hangman(secret, guess):
 
 
 # Task 10
+# Task 10
 def pig_latin(string):
     words = string.split()
     result = []
@@ -168,26 +169,18 @@ def pig_latin(string):
     vowels = "aeiou"
 
     for word in words:
+        index = 0
 
-        # Case 1: word starts with a vowel
-        if word[0] in vowels:
-            new_word = word + "ay"
+        for i, letter in enumerate(word):
+            if letter in vowels:
+                # Treat "qu" as one consonant sound, so skip the "u"
+                if letter == "u" and i > 0 and word[i - 1] == "q":
+                    continue
 
-        # Case 2: word starts with "qu"
-        elif word[0:2] == "qu":
-            new_word = word[2:] + "quay"
+                index = i
+                break
 
-        # Case 3: word starts with one or more consonants
-        else:
-            index = 0
-
-            for i, letter in enumerate(word):
-                if letter in vowels:
-                    index = i
-                    break
-
-            new_word = word[index:] + word[:index] + "ay"
-
+        new_word = word[index:] + word[:index] + "ay"
         result.append(new_word)
 
     return " ".join(result)
